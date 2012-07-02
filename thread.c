@@ -676,14 +676,14 @@ void thread_init(int nthreads, struct event_base *main_base) {
 
     /* Want a wide lock table, but don't waste memory */
     if (nthreads < 3) {
-        power = 10;
+        power = 3;
     } else if (nthreads < 4) {
-        power = 11;
+        power = 4;
     } else if (nthreads < 5) {
-        power = 12;
+        power = 5;
     } else {
         /* 8192 buckets, and central locks don't scale much past 5 threads */
-        power = 13;
+        power = 6;
     }
 
     item_lock_count = ((unsigned long int)1 << (power));

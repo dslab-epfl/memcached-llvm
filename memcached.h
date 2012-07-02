@@ -61,7 +61,7 @@
 #define BIN_PKT_HDR_WORDS (MIN_BIN_PKT_LENGTH/sizeof(uint32_t))
 
 /* Initial power multiplier for the hash table */
-#define HASHPOWER_DEFAULT 16
+#define HASHPOWER_DEFAULT 3
 
 /* unistd.h is here */
 #if HAVE_UNISTD_H

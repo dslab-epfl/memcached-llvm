@@ -4979,7 +4979,7 @@ int main (int argc, char **argv) {
                     return 1;
                 }
                 settings.hashpower_init = atoi(subopts_value);
-                if (settings.hashpower_init < 12) {
+                if (settings.hashpower_init < 2) {
                     fprintf(stderr, "Initial hashtable multiplier of %d is too low\n",
                         settings.hashpower_init);
                     return 1;
@@ -5609,6 +5609,8 @@ static pid_t start_server(in_port_t *port_out, bool daemon, int timeout) {
         argv[arg++] = "11211";
         argv[arg++] = "-U";
         argv[arg++] = "0";
+        argv[arg++] = "-o";
+        argv[arg++] = "hashpower=3";
 		// CLOUD9: Use the ASCII protocol
         //argv[arg++] = "-B";
         //argv[arg++] = "ascii";
